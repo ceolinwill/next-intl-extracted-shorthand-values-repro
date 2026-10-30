@@ -1,6 +1,6 @@
 # next-intl `useExtracted` Shorthand `values` Reproduction
 
-Minimal reproduction for `useExtracted` dropping `values` when the object form passes them as a shorthand property. `t.rich({ message, description, values })` compiles to `t.rich("vHSJFT")` with no values, so the message can't format: `t.rich` and `t.markup` render the message id and `t` renders `Hello undefined!`. The same call with `values: values` works. TypeScript accepts both, and the `object-shorthand` lint rule (ESLint, oxlint) autofixes `values: values` into the shorthand that breaks.
+Minimal reproduction for `useExtracted` dropping `values` when the object form passes them as a shorthand property. `t.rich({ message, description, values })` compiles to `t.rich("vHSJFT")` with no values, so the message can't format: `t.rich` and `t.markup` render the message id and `t` renders `Hello undefined!`. The same call with `values: values` works. TypeScript accepts both, and the `object-shorthand` lint rule (ESLint, oxlint) autofixes `values: values` into the shorthand that breaks. Reported in https://github.com/amannn/next-intl/issues/2444.
 
 ## Reproduction
 
